@@ -1,0 +1,27 @@
+<h1>Players#show</h1>
+<p>Find me in app/views/players/show.html.erb</p>
+
+<h2>Games</h2>
+
+<ul>
+  <% @player.games.each do |game| %>
+    <%= game.id %>
+    <%= game.player.name %>
+    vs.
+    <%= Player.find(game.opponent_id).name %>
+  <% end %>
+  
+  <% @player.inverse_games.each do |game| %>
+    <strong>Game ID</strong>
+    <%= game.id %>
+    <strong>Players</strong>
+    <%= game.player.name %>
+    vs.
+    <%= Player.find(game.opponent_id).name %>
+    <%#= game.player.inverse_opponents.name %>
+    <%#= game.opponent.name %>
+
+    <%#= @player.inverse_opponent.name %>
+  <% end %>
+
+</ul>

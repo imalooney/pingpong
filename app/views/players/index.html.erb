@@ -1,0 +1,11 @@
+<h1>Players#index</h1>
+<p>Find me in app/views/players/index.html.erb</p>
+
+<div id="players">
+  <% for player in @players %>
+  <div class="player">
+    <strong><%= link_to player.name, player %></strong>
+    <%= link_to "Play Game", games_path(opponent_id: :player), method: :post %>
+  </div>
+  <% end %>
+</div>
